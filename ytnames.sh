@@ -9,8 +9,8 @@ for YT_UUID in $(ls -1 | grep -P "^_" | cut -d\. -f1 | sort | uniq | grep -vP "\
     echo "could not retrieve a title for $YT_UUID"
   else
     # clean up characters
-    name=${name//&#39/_}
     name=${name//&#39;/_}
+    name=${name//&#39/_}
     name=${name//&quot;/_}
     # only allow ascii characters
     name=${name//[^a-zA-Z0-9_%&: ()\[\]-]/}
